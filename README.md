@@ -1,7 +1,7 @@
 # **Course Recommendation System**
 
 ## **Overview**
-Sciotaku is a hybrid course recommendation system designed to provide personalized and efficient recommendations for e-learning platforms. The system integrates advanced techniques, including sentiment analysis, clustering, collaborative filtering, and content-based filtering, to tackle the challenges of information overload and personalization in online education.
+This project is a hybrid course recommendation system designed to provide personalized and efficient recommendations for e-learning platforms. The system integrates advanced techniques, including sentiment analysis, clustering, collaborative filtering, and content-based filtering, to tackle the challenges of information overload and personalization in online education.
 
 ### **Key Features**
 - Sentiment analysis using VADER to analyze course reviews and prioritize highly rated courses.
@@ -34,8 +34,7 @@ Sciotaku is a hybrid course recommendation system designed to provide personaliz
 
 ### **1. Clone the Repository**
 ```bash
-git clone https://github.com/<your-username>/Sciotaku.git
-cd Sciotaku
+git clone https://github.com/Sciotaku/DTUDataScienceProject.git
 
 ### **2. Set Up a Virtual Environment**
 ```bash
@@ -53,14 +52,19 @@ Download Dataset from https://www.kaggle.com/datasets/imuhammad/course-reviews-o
 ## **How to Run the Project**
 The project involves three main steps executed sequentially in Jupyter notebooks:
 
+### **1. Data Preprocessing**
 Step 1: Data Preprocessing
 Open and run the DataAnalysis_Rahul.ipynb notebook.
 This notebook loads the dataset, cleans and preprocesses the data, and prepares features for analysis.
 The output will include a processed dataset ready for sentiment analysis.
+
+### **2. Sentiment Analysis**
 Step 2: Sentiment Analysis
 Open and run the SentimentAnalysis_Rahul.ipynb notebook.
 This notebook performs sentiment analysis using the VADER tool.
 The sentiment scores are aggregated at the course level and stored for further use in the recommendation engine.
+
+### **3. Hybrid Recommendation Engine**
 Step 3: Hybrid Recommendation Engine
 Open and run the recengine.ipynb notebook.
 This notebook implements the hybrid recommendation system by combining clustering, LSH-based content similarity, and collaborative filtering.
