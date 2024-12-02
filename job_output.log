@@ -1,0 +1,1824 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23221369: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 11:55:57 2024
+Job was executed on host(s) <n-62-20-6>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 11:57:03 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 11:57:03 2024
+Terminated at Wed Nov 20 11:57:04 2024
+Results reported at Wed Nov 20 11:57:04 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Activate virtual environment
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/12.1         # Load CUDA for GPU support
+source ${REPO}/.venv/bin/activate  # Activate your virtual environment
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   0.35 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   3 sec.
+    Turnaround time :                            67 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.10.12
+Wed Nov 20 12:04:03 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-32GB           On  |   00000000:58:00.0 Off |                    0 |
+| N/A   31C    P0             26W /  250W |       1MiB /  32768MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23221875: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 12:02:28 2024
+Job was executed on host(s) <n-62-20-16>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 12:04:01 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 12:04:01 2024
+Terminated at Wed Nov 20 12:04:03 2024
+Results reported at Wed Nov 20 12:04:03 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Activate virtual environment
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/12.1         # Load CUDA for GPU support
+source ${REPO}/.venv/bin/activate  # Activate your virtual environment
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   0.55 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   2 sec.
+    Turnaround time :                            95 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.10.12
+Wed Nov 20 12:27:32 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-16GB           On  |   00000000:AF:00.0 Off |                    0 |
+| N/A   37C    P0             24W /  250W |       1MiB /  16384MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23223513: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 12:24:37 2024
+Job was executed on host(s) <n-62-20-2>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 12:27:30 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 12:27:30 2024
+Terminated at Wed Nov 20 12:27:41 2024
+Results reported at Wed Nov 20 12:27:41 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Activate virtual environment
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/12.1         # Load CUDA for GPU support
+source ${REPO}/.venv/bin/activate  # Activate your virtual environment
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   3.19 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   13 sec.
+    Turnaround time :                            184 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.10.12
+Wed Nov 20 12:32:26 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-32GB           On  |   00000000:58:00.0 Off |                    0 |
+| N/A   31C    P0             26W /  250W |       1MiB /  32768MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23223973: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 12:32:12 2024
+Job was executed on host(s) <n-62-20-16>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 12:32:24 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 12:32:24 2024
+Terminated at Wed Nov 20 12:32:31 2024
+Results reported at Wed Nov 20 12:32:31 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Activate virtual environment
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/12.1         # Load CUDA for GPU support
+source ${REPO}/.venv/bin/activate  # Activate your virtual environment
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   2.64 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   7 sec.
+    Turnaround time :                            19 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.10.12
+Wed Nov 20 12:35:57 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-32GB           On  |   00000000:58:00.0 Off |                    0 |
+| N/A   32C    P0             26W /  250W |       1MiB /  32768MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23223988: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 12:35:10 2024
+Job was executed on host(s) <n-62-20-16>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 12:35:56 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 12:35:56 2024
+Terminated at Wed Nov 20 12:36:00 2024
+Results reported at Wed Nov 20 12:36:00 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Activate virtual environment
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/12.1         # Load CUDA for GPU support
+source ${REPO}/.venv/bin/activate  # Activate your virtual environment
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   1.77 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   4 sec.
+    Turnaround time :                            50 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.10.12
+Wed Nov 20 12:55:05 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-SXM2-32GB           On  |   00000000:15:00.0 Off |                    0 |
+| N/A   33C    P0             42W /  300W |       1MiB /  32768MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23224090: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 12:55:00 2024
+Job was executed on host(s) <n-62-20-12>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 12:55:03 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 12:55:03 2024
+Terminated at Wed Nov 20 12:55:11 2024
+Results reported at Wed Nov 20 12:55:11 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Activate virtual environment
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/12.1         # Load CUDA for GPU support
+source ${REPO}/.venv/bin/activate  # Activate your virtual environment
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   2.22 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   8 sec.
+    Turnaround time :                            11 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.10.12
+Wed Nov 20 20:29:42 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-SXM2-32GB           On  |   00000000:3A:00.0 Off |                    0 |
+| N/A   34C    P0             44W /  300W |       1MiB /  32768MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23232244: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 20:22:27 2024
+Job was executed on host(s) <n-62-20-11>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 20:29:40 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 20:29:40 2024
+Terminated at Wed Nov 20 20:29:51 2024
+Results reported at Wed Nov 20 20:29:51 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Activate virtual environment
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/12.1         # Load CUDA for GPU support
+source ${REPO}/.venv/bin/activate  # Activate your virtual environment
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   1.76 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   12 sec.
+    Turnaround time :                            444 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.9.18
+Wed Nov 20 20:54:04 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-SXM2-32GB           On  |   00000000:16:00.0 Off |                    0 |
+| N/A   40C    P0             46W /  300W |       1MiB /  32768MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23232430: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 20:51:47 2024
+Job was executed on host(s) <n-62-20-12>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 20:54:02 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 20:54:02 2024
+Terminated at Wed Nov 20 20:54:04 2024
+Results reported at Wed Nov 20 20:54:04 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Load necessary modules
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/12.1         # Load CUDA for GPU support
+
+# Activate your virtual environment (now inside the project folder)
+source ${REPO}/myenv/bin/activate  # Activate your 'myenv' virtual environment inside myproject
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   0.60 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   3 sec.
+    Turnaround time :                            137 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.9.18
+Wed Nov 20 21:05:11 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-32GB           On  |   00000000:D8:00.0 Off |                    0 |
+| N/A   36C    P0             27W /  250W |       1MiB /  32768MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23232477: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 21:01:43 2024
+Job was executed on host(s) <n-62-20-14>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 21:05:10 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 21:05:10 2024
+Terminated at Wed Nov 20 21:05:12 2024
+Results reported at Wed Nov 20 21:05:12 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Load necessary modules
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/12.1         # Load CUDA for GPU support
+
+# Activate your virtual environment (now inside the project folder)
+source ${REPO}/myenv/bin/activate  # Activate your 'myenv' virtual environment inside myproject
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   0.57 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   2 sec.
+    Turnaround time :                            209 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.9.18
+Wed Nov 20 21:13:28 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-16GB           On  |   00000000:AF:00.0 Off |                    0 |
+| N/A   32C    P0             24W /  250W |       1MiB /  16384MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Defaulting to user installation because normal site-packages is not writeable
+Collecting pandas
+  Downloading pandas-2.2.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+Collecting python-dateutil>=2.8.2
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Collecting numpy>=1.22.4
+  Downloading numpy-2.1.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.3 MB)
+Collecting tzdata>=2022.7
+  Downloading tzdata-2024.2-py2.py3-none-any.whl (346 kB)
+Collecting pytz>=2020.1
+  Downloading pytz-2024.2-py2.py3-none-any.whl (508 kB)
+Collecting six>=1.5
+  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: six, tzdata, pytz, python-dateutil, numpy, pandas
+Successfully installed numpy-2.1.3 pandas-2.2.3 python-dateutil-2.9.0.post0 pytz-2024.2 six-1.16.0 tzdata-2024.2
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23232515: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 21:08:56 2024
+Job was executed on host(s) <n-62-20-6>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 21:13:26 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 21:13:26 2024
+Terminated at Wed Nov 20 21:14:30 2024
+Results reported at Wed Nov 20 21:14:30 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Load necessary modules
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/12.1         # Load CUDA for GPU support
+
+# Activate your virtual environment (now inside the project folder)
+source ${REPO}/myenv/bin/activate  # Activate your 'myenv' virtual environment inside myproject
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   10.00 sec.
+    Max Memory :                                 64 MB
+    Average Memory :                             64.00 MB
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               8128.00 MB
+    Max Swap :                                   -
+    Max Processes :                              5
+    Max Threads :                                8
+    Run time :                                   66 sec.
+    Turnaround time :                            334 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.9.18
+Wed Nov 20 21:21:15 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-SXM2-32GB           On  |   00000000:3B:00.0 Off |                    0 |
+| N/A   37C    P0             43W /  300W |       1MiB /  32768MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23232665: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 21:20:45 2024
+Job was executed on host(s) <n-62-20-10>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 21:21:13 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 21:21:13 2024
+Terminated at Wed Nov 20 21:21:17 2024
+Results reported at Wed Nov 20 21:21:17 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Load necessary modules
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/12.1         # Load CUDA for GPU support
+
+# Activate your virtual environment (now inside the project folder)
+source ${REPO}/myenv/bin/activate  # Activate your 'myenv' virtual environment inside myproject
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   0.93 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   5 sec.
+    Turnaround time :                            32 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.9.18
+Wed Nov 20 21:36:10 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-32GB           On  |   00000000:58:00.0 Off |                    0 |
+| N/A   38C    P0             26W /  250W |       1MiB /  32768MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23232740: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 21:30:38 2024
+Job was executed on host(s) <n-62-11-13>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 21:36:08 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 21:36:08 2024
+Terminated at Wed Nov 20 21:36:12 2024
+Results reported at Wed Nov 20 21:36:12 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Load necessary modules
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/12.1         # Load CUDA for GPU support
+
+# Activate your virtual environment (now inside the project folder)
+source ${REPO}/myenv/bin/activate  # Activate your 'myenv' virtual environment inside myproject
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   1.20 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   5 sec.
+    Turnaround time :                            334 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.10.12
+Wed Nov 20 21:55:01 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-16GB           On  |   00000000:AF:00.0 Off |                    0 |
+| N/A   37C    P0             24W /  250W |       1MiB /  16384MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23232911: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 21:48:18 2024
+Job was executed on host(s) <n-62-20-2>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 21:55:00 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 21:55:00 2024
+Terminated at Wed Nov 20 22:11:41 2024
+Results reported at Wed Nov 20 22:11:41 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Load necessary modules
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/11.3         # Load CUDA for GPU support
+
+# Activate your virtual environment (now inside the project folder)
+source ${REPO}/.venv/bin/activate  # Activate your 'myenv' virtual environment inside myproject
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   954.00 sec.
+    Max Memory :                                 1002 MB
+    Average Memory :                             924.45 MB
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               7190.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                9
+    Run time :                                   1002 sec.
+    Turnaround time :                            1403 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.10.12
+Wed Nov 20 22:33:51 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-16GB           On  |   00000000:AF:00.0 Off |                    0 |
+| N/A   36C    P0             25W /  250W |       1MiB /  16384MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23233113: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 22:19:09 2024
+Job was executed on host(s) <n-62-20-6>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 22:33:49 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 22:33:49 2024
+Terminated at Wed Nov 20 22:34:43 2024
+Results reported at Wed Nov 20 22:34:43 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Load necessary modules
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/11.3         # Load CUDA for GPU support
+
+# Activate your virtual environment (now inside the project folder)
+source ${REPO}/.venv/bin/activate  # Activate your 'myenv' virtual environment inside myproject
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   14.00 sec.
+    Max Memory :                                 105 MB
+    Average Memory :                             105.00 MB
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               8087.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                7
+    Run time :                                   56 sec.
+    Turnaround time :                            934 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.10.12
+Wed Nov 20 22:48:09 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-16GB           On  |   00000000:37:00.0 Off |                    0 |
+| N/A   56C    P0             29W /  250W |       1MiB /  16384MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23233322: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Wed Nov 20 22:44:26 2024
+Job was executed on host(s) <n-62-20-2>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Wed Nov 20 22:48:07 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Wed Nov 20 22:48:07 2024
+Terminated at Wed Nov 20 23:04:00 2024
+Results reported at Wed Nov 20 23:04:00 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Load necessary modules
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/11.3         # Load CUDA for GPU support
+
+# Activate your virtual environment (now inside the project folder)
+source ${REPO}/.venv/bin/activate  # Activate your 'myenv' virtual environment inside myproject
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 sentiment_analysis.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   935.00 sec.
+    Max Memory :                                 947 MB
+    Average Memory :                             646.10 MB
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               7245.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                9
+    Run time :                                   954 sec.
+    Turnaround time :                            1174 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.10.12
+Fri Nov 22 13:11:47 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-16GB           On  |   00000000:37:00.0 Off |                    0 |
+| N/A   38C    P0             26W /  250W |       1MiB /  16384MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23242061: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Fri Nov 22 12:44:41 2024
+Job was executed on host(s) <n-62-20-4>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Fri Nov 22 13:11:45 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Fri Nov 22 13:11:45 2024
+Terminated at Fri Nov 22 13:26:56 2024
+Results reported at Fri Nov 22 13:26:56 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Load necessary modules
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/11.3         # Load CUDA for GPU support
+
+# Activate your virtual environment (now inside the project folder)
+source ${REPO}/.venv/bin/activate  # Activate your 'myenv' virtual environment inside myproject
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 reccengine.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   894.00 sec.
+    Max Memory :                                 1308 MB
+    Average Memory :                             1193.20 MB
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               6884.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                7
+    Run time :                                   911 sec.
+    Turnaround time :                            2535 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.10.12
+Fri Nov 22 14:34:00 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-16GB           On  |   00000000:37:00.0 Off |                    0 |
+| N/A   65C    P0             38W /  250W |       1MiB /  16384MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+                                                      name  ... rating
+240498                   Neural Networks and Deep Learning  ...      5
+242065                   Neural Networks and Deep Learning  ...      5
+237285                   Neural Networks and Deep Learning  ...      5
+1300571  Aprendiendo a aprender: Poderosas herramientas...  ...      5
+239208                   Neural Networks and Deep Learning  ...      5
+
+[5 rows x 3 columns]
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23242421: <NONAME> in cluster <dcc> Done
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Fri Nov 22 14:16:02 2024
+Job was executed on host(s) <n-62-20-3>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Fri Nov 22 14:33:58 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Fri Nov 22 14:33:58 2024
+Terminated at Fri Nov 22 14:34:24 2024
+Results reported at Fri Nov 22 14:34:24 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Load necessary modules
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/11.3         # Load CUDA for GPU support
+
+# Activate your virtual environment (now inside the project folder)
+source ${REPO}/.venv/bin/activate  # Activate your 'myenv' virtual environment inside myproject
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 reccengine.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   15.00 sec.
+    Max Memory :                                 253 MB
+    Average Memory :                             253.00 MB
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               7939.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                7
+    Run time :                                   27 sec.
+    Turnaround time :                            1102 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
+Python 3.10.12
+Fri Nov 22 15:01:21 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-SXM2-32GB           On  |   00000000:3B:00.0 Off |                    0 |
+| N/A   38C    P0             43W /  300W |       1MiB /  32768MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+                                                      name  ... rating
+240498                   Neural Networks and Deep Learning  ...      5
+242065                   Neural Networks and Deep Learning  ...      5
+237285                   Neural Networks and Deep Learning  ...      5
+1300571  Aprendiendo a aprender: Poderosas herramientas...  ...      5
+239208                   Neural Networks and Deep Learning  ...      5
+
+[5 rows x 3 columns]
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23242554: <NONAME> in cluster <dcc> Done
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s241955> in cluster <dcc> at Fri Nov 22 14:40:38 2024
+Job was executed on host(s) <n-62-20-11>, in queue <gpuv100>, as user <s241955> in cluster <dcc> at Fri Nov 22 15:01:19 2024
+</zhome/bb/9/212485> was used as the home directory.
+</zhome/bb/9/212485/DTUDataScienceProject/myproject> was used as the working directory.
+Started at Fri Nov 22 15:01:19 2024
+Terminated at Fri Nov 22 15:01:39 2024
+Results reported at Fri Nov 22 15:01:39 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+
+### General LSF options ###
+# Request one GPU (change as needed)
+# - We specify the type of GPU, if needed (e.g., gpu_v100)
+# - We request 4 hours of time (you can adjust based on your need)
+#BSUB -n 1                # Number of CPU cores
+#BSUB -R "rusage[mem=8GB]" # Memory request
+#BSUB -q gpuv100           # Queue for GPUs
+#BSUB -o job_output.log    # Standard output file
+#BSUB -e job_error.log     # Standard error file
+
+# Load environment variables
+source .env   # Make sure you have a .env file with necessary variables like REPO, ENV1, etc.
+
+# Set the repository path (this is your working directory)
+REPO=/zhome/bb/9/212485/DTUDataScienceProject/myproject
+
+# Create output directory if it doesn't exist
+if [[ ! -d ${REPO}/job_out ]]; then
+    mkdir -p ${REPO}/job_out
+fi
+
+# Load necessary modules
+module load python3/3.10.12  # Load the Python module (adjust version as needed)
+module load cuda/11.3         # Load CUDA for GPU support
+
+# Activate your virtual environment (now inside the project folder)
+source ${REPO}/.venv/bin/activate  # Activate your 'myenv' virtual environment inside myproject
+
+# Print the Python version and CUDA version to ensure everything is set correctly
+python --version
+nvidia-smi
+
+# Run your sentiment analysis script
+python3 reccengine.py  # Ensure that the script is in the working directory
+
+# The script should process your dataset, and the results will be saved to a CSV file
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   15.00 sec.
+    Max Memory :                                 461 MB
+    Average Memory :                             461.00 MB
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               7731.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                7
+    Run time :                                   20 sec.
+    Turnaround time :                            1261 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <job_error.log> for stderr output of this job.
+
