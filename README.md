@@ -33,17 +33,14 @@ This project is a hybrid course recommendation system designed to provide person
 ## **Setup Instructions**
 
 ### **1. Clone the Repository**
-```bash
 git clone https://github.com/Sciotaku/DTUDataScienceProject.git
 
 ### **2. Set Up a Virtual Environment**
-```bash
 python -m venv myenv
 source myenv/bin/activate    # On Windows: myenv\Scripts\activate
 
 ### **3. Install Dependencies**
 Install the required Python libraries using the requirements.txt file:
-```bash
 pip install -r requirements.txt
 
 ### **3. Install Dependencies**
