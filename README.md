@@ -56,19 +56,16 @@ Download Dataset from https://www.kaggle.com/datasets/imuhammad/course-reviews-o
 The project involves three main steps executed sequentially in Jupyter notebooks:
 
 ### **1. Data Preprocessing**
-Step 1: Data Preprocessing
 Open and run the DataAnalysis_Rahul.ipynb notebook.
 This notebook loads the dataset, cleans and preprocesses the data, and prepares features for analysis.
 The output will include a processed dataset ready for sentiment analysis.
 
 ### **2. Sentiment Analysis**
-Step 2: Sentiment Analysis
 Open and run the SentimentAnalysis_Rahul.ipynb notebook.
 This notebook performs sentiment analysis using the VADER tool.
 The sentiment scores are aggregated at the course level and stored for further use in the recommendation engine.
 
 ### **3. Hybrid Recommendation Engine**
-Step 3: Hybrid Recommendation Engine
 Open and run the recengine.ipynb notebook.
 This notebook implements the hybrid recommendation system by combining clustering, LSH-based content similarity, and collaborative filtering.
 Provide an input course name, and the system will generate personalized course recommendations.
