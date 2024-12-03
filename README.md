@@ -62,5 +62,5 @@ The sentiment scores are aggregated at the course level and stored for further u
 
 ### **3. Recommendation Engine**
 Open and run the recengine.ipynb notebook.
-This notebook implements the hybrid recommendation system by combining clustering, LSH-based content similarity, and collaborative filtering.
+This notebook implements the hybrid recommendation system by combining clustering, and content-based filtering.
 Provide an input course name, and the system will generate personalized course recommendations.
