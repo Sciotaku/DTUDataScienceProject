@@ -3,13 +3,6 @@
 ## **Overview**
 This project is a hybrid course recommendation system designed to provide personalized and efficient recommendations for e-learning platforms. The system integrates advanced techniques, including sentiment analysis, clustering, collaborative filtering, and content-based filtering, to tackle the challenges of information overload and personalization in online education.
 
-### **Key Features**
-- Sentiment analysis using VADER to analyze course reviews and prioritize highly rated courses.
-- Clustering with K-Means to group similar courses for contextually relevant recommendations.
-- Locality-Sensitive Hashing (LSH) for efficient similarity computations at scale.
-- Dynamic filtering to allow users to customize recommendations based on ratings, institutions, or other preferences.
-- Scalable and efficient processing for large datasets with over 1.5 million course reviews.
-
 ---
 
 ## **Project Structure**
